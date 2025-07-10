@@ -1,5 +1,6 @@
 # 🎬 Movie Search App
 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 A React.js-based movie search application powered by the OMDB API. Built to demonstrate frontend skills including state management, UI design, and feature enhancements.
 
 ## 🔍 Features
