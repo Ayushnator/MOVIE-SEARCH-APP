@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './App.css';
-import { BrowserRouter } from 'react-router-dom'; // <-- Add this
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+      <p>This is a movie search app.</p>
+    </div>
+  );
+}
+
+export default About;
