@@ -80,7 +80,7 @@ body.light {
 h1 {
     font-size: 3.5rem;
     letter-spacing: 2px;
-    color: rgb(69, 8, 8);
+    color: rgb(131, 103, 103);
     font-family: 'Raleway', 'Roboto Slab', Arial, sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -99,7 +99,7 @@ h1 {
 
     padding: 1.5rem 1.75rem;
     border-radius: 3rem;
-    background:rgb(212, 212, 25);
+    background:rgb(156, 156, 55);
     border: 2px solid var(--border-color);
 
     box-shadow: 0 4px 16px var(--shadow-color);
@@ -175,6 +175,10 @@ h1 {
     font-size: 1.25rem;
     color: var(--text-primary);
     font-family: var(--font-raleway);
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .container {
@@ -270,7 +274,7 @@ h1 {
 }
 
 .recent-searches h3 {
-    color: var(--text-primary);
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -314,9 +318,44 @@ h1 {
     align-items: center;
     margin: 2rem 0;
     font-size: 1.5rem;
-    color: var(--text-primary);
+    color: red;
     font-family: var(--font-raleway);
     font-weight: 600;
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 1.5rem 0;
+    gap: 1.5rem;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 25px;
+    background: var(--bg-secondary);
+    color: var(--bg-primary);
+    font-size: 1.1rem;
+    font-family: var(--font-raleway);
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+nav a:hover, nav a.active {
+    background: var(--bg-primary);
+    color: var(--bg-secondary);
+    box-shadow: 0 4px 16px var(--shadow-color);
+    transform: translateY(-2px) scale(1.05);
 }
 
 @keyframes spin {
