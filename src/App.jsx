@@ -6,7 +6,7 @@ import MovieCard from "./moviecard";
 import { Routes, Route, Link } from "react-router-dom";
 import About from "./About";
 
-const API_KEY = import.meta.env.VITE_OMDB_API_KEY || "d60ecb78";
+const API_KEY = "d60ecb78"; // Temporarily hardcoded for Vercel deployment
 const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 
 function App() {
