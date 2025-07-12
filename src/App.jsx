@@ -15,8 +15,8 @@ function About() {
   );
 }
 
-const API_KEY = import.meta.env.REACT_APP_OMDB_API_KEY || "d60ecb78";
-const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY || "d60ecb78";
+const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 
 
 function App() {
