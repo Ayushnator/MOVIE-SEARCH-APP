@@ -4,24 +4,15 @@ import './App.css'
 import SearchIcon from "./search.svg"
 import MovieCard from "./moviecard";
 import { Routes, Route, Link } from "react-router-dom";
-// Removed: import About from "./About";
+import About from "./About";
 
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-      <p>This is a movie search app.</p>
-    </div>
-  );
-}
-
-const API_KEY = import.meta.env.VITE_OMDB_API_KEY || "d60ecb78";
+const API_KEY = "d60ecb78"; // Temporarily hardcoded for deployment
 const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [serachTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [recentSearches, setRecentSearches] = useState([]);
   
@@ -41,7 +32,7 @@ function App() {
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      searchMovies(serachTerm);
+      searchMovies(searchTerm);
     } else if (e.key === 'Escape') {
       setSearchTerm("");
       setMovies([]);
@@ -49,7 +40,7 @@ function App() {
   };
 
   const handleSearchClick = () => {
-    searchMovies(serachTerm);
+    searchMovies(searchTerm);
   };
 
   const handleClearClick = () => {
@@ -74,7 +65,7 @@ function App() {
             <h1>MovieSearch</h1>
             <div className="search">
               <input placeholder="Search your movies"
-                value={serachTerm}
+                value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyPress={handleKeyPress}
                 aria-label="Search for movies"
