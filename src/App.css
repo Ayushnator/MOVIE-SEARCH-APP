@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: var(--font-roboto);
+    font-family:"Roboto Slab", serif;
     transition: all 0.3s ease;
 }
 
@@ -80,7 +80,7 @@ body.light {
 h1 {
     font-size: 3.5rem;
     letter-spacing: 2px;
-    color: rgb(131, 103, 103);
+    color: rgb(234, 4, 4);
     font-family: 'Raleway', 'Roboto Slab', Arial, sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -99,7 +99,7 @@ h1 {
 
     padding: 1.5rem 1.75rem;
     border-radius: 3rem;
-    background:rgb(156, 156, 55);
+    background:rgb(136, 146, 158);
     border: 2px solid var(--border-color);
 
     box-shadow: 0 4px 16px var(--shadow-color);
@@ -261,7 +261,7 @@ h1 {
 }
 
 .movie:hover div:nth-of-type(3) {
-    background-color: transparent;
+    background-color: rgb(12, 42, 193);
 }
 
 .movie:hover div:nth-of-type(1) {
@@ -340,7 +340,7 @@ nav a {
     display: inline-block;
     padding: 10px 28px;
     border-radius: 25px;
-    background: var(--bg-secondary);
+    background: rgb(255, 255, 255);
     color: var(--bg-primary);
     font-size: 1.1rem;
     font-family: var(--font-raleway);
@@ -352,7 +352,7 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-    background: var(--bg-primary);
+    background: rgb(170, 86, 203);
     color: var(--bg-secondary);
     box-shadow: 0 4px 16px var(--shadow-color);
     transform: translateY(-2px) scale(1.05);

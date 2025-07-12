@@ -15,8 +15,8 @@ function About() {
   );
 }
 
-const API_KEY = import.meta.env.VITE_OMDB_API_KEY || "d60ecb78";
-const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const API_KEY = import.meta.env.REACT_APP_OMDB_API_KEY || "d60ecb78";
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 
 function App() {
@@ -24,9 +24,7 @@ function App() {
   const [serachTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [recentSearches, setRecentSearches] = useState([]);
-  // Removed: const [isDarkMode, setIsDarkMode] = useState(true);
-
-  // Removed: const toggleTheme = () => { setIsDarkMode(!isDarkMode); };
+  
 
   const searchMovies = async (title) => {
     setLoading(true);
@@ -59,9 +57,7 @@ function App() {
     setMovies([]);
   };
 
-  // Removed: useEffect(() => { document.body.className = isDarkMode ? 'dark' : 'light'; }, [isDarkMode]);
-  // Removed: useEffect(() => { document.body.className = 'dark'; }, []);
-
+  
   useEffect(() => {
     searchMovies("Batman");
   }, []);
@@ -149,6 +145,4 @@ function App() {
     </>
   )
 }
-
-// Removed About component and restore export
 export default App
