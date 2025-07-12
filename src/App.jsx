@@ -7,13 +7,15 @@ import { Routes, Route, Link } from "react-router-dom";
 import About from "./About";
 
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY || "d60ecb78";
-const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 
 function App() {
   const [movies, setMovies] = useState([])
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [recentSearches, setRecentSearches] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+  const [showFavorites, setShowFavorites] = useState(false);
   
 
   const searchMovies = async (title) => {
@@ -27,6 +29,20 @@ function App() {
     if (title && !recentSearches.includes(title)) {
       setRecentSearches(prev => [title, ...prev.slice(0, 4)]); // Keep only 5 recent searches
     }
+  };
+
+  const addToFavorites = (movie) => {
+    if (!favorites.find(fav => fav.imdbID === movie.imdbID)) {
+      setFavorites(prev => [...prev, movie]);
+    }
+  };
+
+  const removeFromFavorites = (movieId) => {
+    setFavorites(prev => prev.filter(fav => fav.imdbID !== movieId));
+  };
+
+  const toggleFavorites = () => {
+    setShowFavorites(!showFavorites);
   };
 
   const handleKeyPress = (e) => {
@@ -116,11 +132,49 @@ function App() {
                 </div>
               </div>
             )}
+            <div className="favorites-section">
+              <button 
+                className="favorites-btn"
+                onClick={toggleFavorites}
+                aria-label="Toggle favorites"
+              >
+                {showFavorites ? 'Hide Favorites' : 'Show Favorites'} ({favorites.length})
+              </button>
+            </div>
+            {showFavorites && favorites.length > 0 && (
+              <div className="favorites-container">
+                <h3>Your Favorites:</h3>
+                <div className="container">
+                  {favorites.map((movie) => (
+                    <div key={movie.imdbID} className="movie-with-favorite">
+                      <MovieCard movie={movie} />
+                      <button 
+                        className="remove-favorite-btn"
+                        onClick={() => removeFromFavorites(movie.imdbID)}
+                        aria-label={`Remove ${movie.Title} from favorites`}
+                      >
+                        ❌ Remove
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {loading && <div className="loader">Loading...</div>}
             {movies?.length > 0 ? (
               <div className="container">
                 {movies.map((movie) => (
-                  <MovieCard movie={movie} key={movie.imdbID} />
+                  <div key={movie.imdbID} className="movie-with-favorite">
+                    <MovieCard movie={movie} />
+                    <button 
+                      className="add-favorite-btn"
+                      onClick={() => addToFavorites(movie)}
+                      aria-label={`Add ${movie.Title} to favorites`}
+                      disabled={favorites.find(fav => fav.imdbID === movie.imdbID)}
+                    >
+                      {favorites.find(fav => fav.imdbID === movie.imdbID) ? '❤️ Added' : '🤍 Add to Favorites'}
+                    </button>
+                  </div>
                 ))}
               </div>
             ) : (
