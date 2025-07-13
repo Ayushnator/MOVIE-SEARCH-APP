@@ -6,6 +6,15 @@ A React.js-based movie search application powered by the OMDB API. Built to demo
 ## 🔍 Features
 
 - **Live Movie Search** — Fetch results from OMDB in real-time.
+- **Filtering Feature
+
+This project includes a dynamic filtering system that enhances user experience by allowing refined movie searches based on:
+
+- **Year**: Users can select a specific release year to narrow down results.
+- **Genre**: Choose from popular genres like Action, Comedy, Drama, etc.
+- **Rating**: Filter movies by minimum rating to find top-rated content.
+
+
 -** Favorite Feature** - Favorites are stored locally .
 - **Recent Searches** — Stores the last five searches locally.
 - **Responsive UI** — Smooth experience across devices.
