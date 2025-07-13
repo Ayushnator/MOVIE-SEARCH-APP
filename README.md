@@ -6,15 +6,13 @@ A React.js-based movie search application powered by the OMDB API. Built to demo
 ## 🔍 Features
 
 - **Live Movie Search** — Fetch results from OMDB in real-time.
-- **Pagination** — Browse large result sets page by page.
-- **Toggle Mode** — Switch between light and dark theme.
+-** Favorite Feature** - Favorites are stored locally .
 - **Recent Searches** — Stores the last five searches locally.
 - **Responsive UI** — Smooth experience across devices.
 
 ## 🧰 Tech Stack
 
 - **React.js**
-- **Axios** for API calls
 - **React Router**
 - **Local Storage** for search history
 - **Custom Hooks & Redux (if used)**
@@ -35,8 +33,7 @@ A React.js-based movie search application powered by the OMDB API. Built to demo
 
 ## 💡 Future Improvements
 
-- Dark Mode toggle  
-- Add Favorites functionality  
+- Dark Mode toggle   
 - Error boundary integration
 
 ## 👤 Author
